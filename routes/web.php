@@ -15,6 +15,9 @@ use App\Http\Controllers\TasksController;
 |
 */
 
+Route::get('/', [AuthController::class,'show']);
+Route::post('/', [AuthController::class,'login']);
+Route::get('main', [TasksController::class, 'index'])->name('main');
 Route::get('/', [TasksController::class, 'index'])->name('home');
 Route::get('add.task', [TasksController::class, 'create'])->name('add.task');
 Route::post('add.task', [TasksController::class, 'store'])->name('add.task');
