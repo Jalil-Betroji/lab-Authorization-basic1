@@ -3,7 +3,7 @@
 ## Travail à faire
 
 - Ajouter l'authentification pour [`Lab-Laravel-crud-basic`](https://github.com/Jalil-Betroji/lab-crud.git) .
-- Additionner l'autorisation pour `Lab-Laravel-crud-basic` en utilisant uniquement `gate` sans recourir aux `policies`.
+- Additionner l'autorisation pour [`Lab-Laravel-crud-basic`](https://github.com/Jalil-Betroji/lab-crud.git) en utilisant uniquement `gate` sans recourir aux `policies`.
 
 ### Steps to run this application 
 
