@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,15 +11,18 @@ class AuthController extends Controller
     public function show(){
         return view('home');
     }
-    public function login(Request $request){
-        $validatedData = $request->validate([
-            'email' => ['required' , 'email'],
-            'password' => ['required']
-        ]);
-        if(auth()->attempt(request()->only(["email" , "password"]))){
-            return redirect('main');
-        }
-        return redirect('/')->withErrors('email' , 'email ou mot de passe invalide');
-        
+    public function login(LoginRequest $request){
+      $credentials = $request->validated();
+      if(Auth::attempt($credentials)){
+          $request->session()->regenerate();
+      return redirect()->intended(route('main'));
+      }
+      return to_route('login')->withErrors([
+        'email' => 'email invalide'
+      ])->onlyInput('email');
+    }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('login');
     }
 }
