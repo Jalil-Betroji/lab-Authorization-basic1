@@ -30,9 +30,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('main')}}">Liste des taches</a>
                 </li>
+                @can('create-Task')
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('add.task')}}">Ajouté une tache</a>
                 </li>
+                @endcan
             </ul>
 
             <form class="form-inline my-2 my-lg-0" id="search-form">

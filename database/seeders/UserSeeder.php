@@ -17,34 +17,18 @@ class UserSeeder extends Seeder
     {
         DB::table("users")->insert([
             [
-                'name' => 'Jalil Betroji',
-                'email' => 'jalil.betroji.solicode@gmail.com',
-                'role' => 'scrum master',
-                'password' => Hash::make('scrum'),
+                'name' => 'Chef de projet',
+                'email' => 'project.leader@solicode.co',
+                'role' => 'project-leader',
+                'password' => Hash::make('chef'),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'name' => 'Hamid Achaou',
-                'email' => 'hamid.achaou.solicode@gmail.com',
+                'name' => 'membre',
+                'email' => 'membre@solicode.co',
                 'role' => 'member',
-                'password' => Hash::make('hamid'),
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Amin Lamchatab',
-                'email' => 'amin.lamchatab.solicode@gmail.com',
-                'role' => 'member',
-                'password' => Hash::make('amin'),
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Soufiane Boukhar',
-                'email' => 'soufiane.boukhar.solicode@gmail.com',
-                'role' => 'member',
-                'password' => Hash::make('soufiane'),
+                'password' => Hash::make('membre'),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]

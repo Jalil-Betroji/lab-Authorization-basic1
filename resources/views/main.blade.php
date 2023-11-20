@@ -8,12 +8,12 @@
                <th scope="col">Nom</th> 
                <th scope="col">Description</th> 
                
-     
+    @can('edit-Task')
                <th scope="col">Action</th>
-               
+    @endcan
            </tr> 
        </thead> 
-       <tbody id="search-result">
+       <tbody id="search-result" class='text-center'>
               @include('search')
        </tbody>
        <input type="hidden" id='page' value="1">
